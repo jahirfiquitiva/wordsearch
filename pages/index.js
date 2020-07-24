@@ -1,25 +1,33 @@
-import { useState } from 'react';
+import WordSearch from '@components/ws/ws';
+import WordSearchWrapper from '@components/ws/ws-wrapper';
+import wordsearch from '@utils/wordsearch';
 import Head from 'next/head';
-import SopaLetras from '../components/sopa/sopa-letras';
 
-const Home = () => {
-  const [counter, setCounter] = useState(0);
-
-  return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico"/>
-      </Head>
-
-      <p>Contador {counter}</p>
-      <button onClick={() => setCounter(counter - 1)}>-1</button>
-      <button onClick={() => setCounter(counter + 1)}>+1</button>
-
-      <br/><br/><br/>
-      <SopaLetras/>
-    </div>
-  );
+const WordSearchSite = (props) => {
+  return (<WordSearchWrapper {...props}>
+    <Head>
+      <title>Word Search</title>
+    </Head>
+    <WordSearch/>
+  </WordSearchWrapper>);
 };
 
-export default Home;
+export default WordSearchSite;
+
+export const getServerSideProps = async (context) => {
+  const wordsJSON = await import('./../data/words.json');
+  const words = wordsJSON.default || [];
+  const wordsSortedByLength = words.sort((a, b) => {
+    return a.length > b.length ? -1 : 1;
+  });
+  const size = Math.ceil(wordsSortedByLength[0].length * 1.25);
+  const search = await wordsearch(words, size, size);
+  if (!search) return { props: {} };
+  return {
+    props: {
+      puzzle: search.grid,
+      solved: search.solved,
+      placed: search.placed,
+    }
+  };
+};
