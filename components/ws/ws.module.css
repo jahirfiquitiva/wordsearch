@@ -37,5 +37,6 @@ ul.words li {
 }
 
 ul.words li.solved {
+    color: #20bf6b;
     text-decoration: line-through;
 }
