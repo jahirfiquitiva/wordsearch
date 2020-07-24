@@ -16,12 +16,11 @@ table.ws td {
 
 table.ws td:hover,
 table.ws td:focus {
-    background-color: #69d4ff;
+    background-color: #fee583;
 }
 
 table.ws td.active {
-    background-color: #33667a;
-    color: #fff;
+    background-color: #fed330;
 }
 
 table.ws td.cw,
