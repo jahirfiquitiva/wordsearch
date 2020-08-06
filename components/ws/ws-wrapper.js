@@ -20,16 +20,11 @@ const WordSearchWrapper = ({ puzzle, solved, placed, children }) => {
   const getSolvedWords = () => {
     const solvedWords = [];
     (Object.keys(placed) || []).forEach((key) => {
-      console.log('*********************************************************');
-      console.log(`Word: ${key}`);
       let score = 0;
       (placed[key] || []).forEach((position) => {
-        console.log(position.join(','));
-        console.log(selectedLetters);
         if (selectedLetters.includes(position.join(','))) score += 1;
       });
       if (score >= key.length) solvedWords.push(key);
-      console.log('*********************************************************');
     });
     return solvedWords;
   };
