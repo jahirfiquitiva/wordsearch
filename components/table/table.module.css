@@ -1,5 +1,10 @@
+.tableContainer {
+  margin: 0 auto;
+}
+
 table.ws {
   --border-color: rgba(0, 0, 0, .24);
   border-spacing: 0;
   border: 1px solid var(--border-color);
+  width: auto;
 }

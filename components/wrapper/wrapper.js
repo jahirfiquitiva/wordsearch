@@ -1,4 +1,5 @@
 import { createContext, useReducer } from 'react';
+import styles from './wrapper.module.css';
 
 export const WordSearchContext = createContext('ws');
 
@@ -36,7 +37,10 @@ const WordSearchWrapper = ({ puzzle, solved, placed, children }) => {
         selectedLetters, setSelectedLetters,
         solvedWords: getSolvedWords()
       }}>
-      {children}
+      <div className={styles.site}>
+        <h1 className={styles.siteTitle}>Word Search Game</h1>
+        {children}
+      </div>
     </WordSearchContext.Provider>
   );
 };

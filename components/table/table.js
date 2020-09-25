@@ -15,24 +15,26 @@ const Table = () => {
     });
   };
 
-  return (<table className={styles.ws}>
-    <tbody>
-      {(puzzle || []).map((row, i) => {
-        return (
-          <tr key={i}>
-            {(row || []).map((it, j) => {
-              return (
-                <Letter
-                  x={j} y={i}
-                  key={j} letter={it}
-                  onClick={() => { toggleLetter(it, j, i); }}/>
-              );
-            })}
-          </tr>
-        );
-      })}
-    </tbody>
-  </table>);
+  return (<div className={styles.tableContainer}>
+    <table className={styles.ws}>
+      <tbody>
+        {(puzzle || []).map((row, i) => {
+          return (
+            <tr key={i}>
+              {(row || []).map((it, j) => {
+                return (
+                  <Letter
+                    x={j} y={i}
+                    key={j} letter={it}
+                    onClick={() => { toggleLetter(it, j, i); }}/>
+                );
+              })}
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>);
 };
 
 export default Table;
