@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { WordSearchContext } from '@components/ws/ws-wrapper';
+import { WordSearchContext } from '@components/wrapper/wrapper';
 import Letter from '@components/letter/letter';
 import styles from './table.module.css';
 

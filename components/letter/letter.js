@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { WordSearchContext } from '@components/ws/ws-wrapper';
+import { WordSearchContext } from '@components/wrapper/wrapper';
 import styles from './letter.module.css';
 
 const Letter = ({ letter, x, y, onClick }) => {
