@@ -1,14 +1,14 @@
-import WordSearch from '@components/ws/ws';
-import WordSearchWrapper from '@components/ws/ws-wrapper';
 import wordsearch from '@utils/wordsearch';
 import Head from 'next/head';
+import WordSearchWrapper from '@components/wrapper/wrapper';
+import Container from '@components/container/container';
 
 const WordSearchSite = (props) => {
   return (<WordSearchWrapper {...props}>
     <Head>
       <title>Word Search</title>
     </Head>
-    <WordSearch/>
+    <Container/>
   </WordSearchWrapper>);
 };
 
