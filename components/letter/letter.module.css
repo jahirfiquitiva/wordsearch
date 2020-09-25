@@ -1,13 +1,13 @@
-/* TODO: Move border color variable to global styles */
 td.letter {
-  --border-color: rgba(0, 0, 0, .24);
   --text-size: 1.1rem;
   font-size: var(--text-size);
   height: calc(var(--text-size) * 2);
   width: calc(var(--text-size) * 2);
   border: 1px solid var(--border-color);
   text-align: center;
+  vertical-align: middle;
   cursor: pointer;
+  padding: 0;
 }
 
 td.letter:hover,
