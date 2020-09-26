@@ -1,9 +1,24 @@
+ul.words {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.6rem;
+  cursor: pointer;
+  padding: .4rem;
+}
+
 ul.words li {
-  font-size: 1.2rem;
-  margin: .4rem 0;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, .12);
+  background-color: #fff;
+  padding: .6rem .8rem;
+  margin-bottom: .6rem;
+}
+
+ul.words li:not(:last-child) {
+  margin-right: .6rem;
 }
 
 ul.words li.solved {
-  color: #20bf6b;
+  background-color: #20bf6b;
   text-decoration: line-through;
 }
